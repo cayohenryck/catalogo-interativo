@@ -28,11 +28,53 @@ body {
     padding: 0 40px;
 }
 
+.main-container header {
+    display: flex;
+    gap: 40px;
+    align-items: center;
+    margin-bottom: 40px;
+    justify-content: space-between;
+}
+
 h1 {
     text-align: left;
-    margin-bottom: 25px;
     font-size: 2rem;
     font-weight: 700;
+}
+
+#add-book-form {
+    display: flex;
+    gap: 15px;
+    background-color: var(--cor-card);
+    padding: 20px;
+    border-radius: 6px;
+}
+
+#add-book-form input{
+    background-color: transparent;
+    padding: 5px 15px;
+    border-radius: 6px;
+    color: var(--cor-texto);
+    outline: none;
+    border: none;
+    border-bottom: 1px solid var(--cor-texto);
+    font-weight: 400;
+    box-shadow: var(--sombra);
+}
+
+#add-book-form button {
+    background-color: #e50914;
+    border: none;
+    border-radius: 6px;
+    padding: 5px 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#add-book-form button:hover {
+    transform: scale(1.1);
+    box-shadow: var(--sombra);
 }
 
 #catalog-container {

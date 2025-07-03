@@ -1,3 +1,26 @@
+const bookForm = document.getElementById("add-book-form");
+const bookTitle = document.getElementById("title-input");
+const bookAuthor = document.getElementById("author-input");
+const bookCoverUrl = document.getElementById("cover-input");
+
+bookForm.addEventListener("submit", function(event){
+    event.preventDefault();
+
+    const livro = {
+        title: bookTitle.value,
+        author: bookAuthor.value,
+        coverUrl: bookCoverUrl.value
+    };
+
+    books.push(livro);
+    renderCatalog();
+
+    bookTitle.value = "";
+    bookAuthor.value = "";
+    bookCoverUrl.value = "";
+});
+
+
 const books = [
     {
         title: "Clean Code",
