@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap');
+
+:root {
+    --cor-fundo: #141414;
+    --cor-card: #1e1e1e;
+    --cor-acento: #e50914;
+    --acento-hover: #f6121d;
+    --cor-texto: #ffffff;
+    --cor-texto-suave: #AAAAAA;
+    --sombra: 0 10px 20px rgba(0, 0, 0, 0.2)
+}
+
+* { 
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+.main-container {
+    max-width: 1400px;
+    margin: 40px auto;
+    padding: 0 40px;
+}
+
+h1 {
+    text-align: left;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+#catalog-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 30px;
+}
+
+.book-card {
+    background-color: var(--cor-card);
+    border-radius: 6px;
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: none;
+    border: 1px solid transparent;
+}
+
+.book-card:hover {
+    transform: scale(1.08);
+    box-shadow: var(--sombra);
+    border: 1px solid var(--cor-acento);
+}
+
+.book-cover {
+    width: 100%;
+    height: 330px;
+    object-fit: cover;
+    display: block;
+}
+
+.book-info {
+    padding: 15px;
+    background-color: var(--cor-card);
+}
+
+.book-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 5px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.book-author {
+    font-size: 0.9rem;
+    color: var(--cor-texto-suave);
+}
