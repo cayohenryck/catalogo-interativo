@@ -21,7 +21,7 @@ bookForm.addEventListener("submit", function(event){
 });
 
 
-const books = [
+let books = [
     {
         title: "Clean Code",
         author: "Robert C. Martin",
@@ -63,6 +63,7 @@ function renderCatalog(){
                     <h3 class="book-title">${book.title}</h3>
                     <p class="book-author">${book.author}</p>
                 </div>
+                <button class="remove-btn" data-title="${book.title}">x</button>
             </div>
         `;
     });
@@ -71,5 +72,18 @@ function renderCatalog(){
 
     catalogContainer.innerHTML = catalogHTML;
 };
+
+catalogContainer.addEventListener('click', (event) => {
+    const elementoClicado = event.target;
+    const removeButton = elementoClicado.closest('.remove-btn');
+
+    if (removeButton){
+        const titleToRemove = removeButton.dataset.title;
+        
+        books = books.filter(book => book.title !== titleToRemove);
+
+        renderCatalog();
+    }
+});
 
 renderCatalog();
