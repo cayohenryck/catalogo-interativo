@@ -57,7 +57,7 @@ h1 {
     color: var(--cor-texto);
     outline: none;
     border: none;
-    border-bottom: 1px solid var(--cor-texto);
+    border-bottom: 1px solid var(--cor-texto-suave);
     font-weight: 400;
     box-shadow: var(--sombra);
 }

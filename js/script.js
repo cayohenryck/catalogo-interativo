@@ -14,14 +14,17 @@ bookForm.addEventListener("submit", function(event){
 
     books.push(livro);
     renderCatalog();
+    saveBooks();
 
     bookTitle.value = "";
     bookAuthor.value = "";
     bookCoverUrl.value = "";
+
+    
 });
 
 
-let books = [
+const defaultBooks = [
     {
         title: "Clean Code",
         author: "Robert C. Martin",
@@ -48,6 +51,16 @@ let books = [
        coverUrl: "https://m.media-amazon.com/images/I/81-Hk3onFyL._SY425_.jpg",
     },
 ];
+
+const savedBooks = localStorage.getItem('catalog-books');
+
+let books = savedBooks ? JSON.parse(savedBooks) : defaultBooks;
+
+//  Salva o array de livros no localStorage.
+
+function saveBooks(){
+    localStorage.setItem('catalog-books', JSON.stringify(books));
+}
 
 // SELEÇÃO DO CONTAINER DOS CARDS
 const catalogContainer = document.getElementById("catalog-container");
@@ -83,6 +96,7 @@ catalogContainer.addEventListener('click', (event) => {
         books = books.filter(book => book.title !== titleToRemove);
 
         renderCatalog();
+        saveBooks();
     }
 });
 
