@@ -57,7 +57,6 @@ const savedBooks = localStorage.getItem('catalog-books');
 let books = savedBooks ? JSON.parse(savedBooks) : defaultBooks;
 
 //  Salva o array de livros no localStorage.
-
 function saveBooks(){
     localStorage.setItem('catalog-books', JSON.stringify(books));
 }
